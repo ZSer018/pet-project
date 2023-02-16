@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>L2.1</title>
+</head>
+<body>
+<p>L2.1 example</p>
+
+<form>
+    Login: <label><input type="text" name="login"/></label>
+    Password: <label><input type="password" name="password"/></label>
+    Password: <label><input type="password" name="mail"/></label>
+
+
+    <button formaction="/signup" formmethod="post" type="submit" value="Sign up">Sign up</button>
+    <button formaction="/signin" formmethod="post" type="submit" value="Sign in">Sign in</button>
+</form>
+</body>
+</html>
+
+person.setFirstName(req.getParameter("firstName"));
+person.setPatronymic(req.getParameter("patronymic"));
+person.setLastName(req.getParameter("LastName"));
+
+Calendar now = Calendar.getInstance();
+now.set(Calendar.YEAR,  Integer.parseInt(req.getParameter("year")));
+now.set(Calendar.MONTH, Integer.parseInt(req.getParameter("month")));
+now.set(Calendar.DAY_OF_MONTH, Integer.parseInt(req.getParameter("day")));
+SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'");
+Date date = formatter.parse(now.toString());
+
+personData.setBirthday( date );
+personData.setPassportNum( Integer.parseInt( req.getParameter("passportNum") ));
+personData.setPassportSeries(req.getParameter("PassportSeries"));
